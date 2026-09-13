@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* Smooth scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+/* Smooth transitions for all interactive elements */
+button, input, select, textarea {
+    transition: all 200ms ease-in-out;
+}
+
+/* Prevent layout shift on focus */ninput:focus-visible {
+    outline: none;
+}
+
+/* Custom animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse-subtle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+li {
+    animation: slideInUp 0.3s ease-in-out;
+}
+
+/* Gradient text utility */
+.gradient-text {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Smooth focus rings */
+input:focus {
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1), 0 0 0 1px rgba(6, 182, 212, 0.5);
+}
+
+button:focus {
+    outline: 2px solid rgba(6, 182, 212, 0.5);
+    outline-offset: 2px;
+}
+
+/* Accessibility - reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
